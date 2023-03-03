@@ -1,0 +1,7 @@
+databaseChangeLog:
+  - include:
+    - file: db/changelog/001_init_db_structure.yaml
+#  - include:
+#    - file: db/changelog/002_upload_guest_into_db.yaml
+  - include:
+    - file: db/changelog/003_add_column_date_to_guest.yaml

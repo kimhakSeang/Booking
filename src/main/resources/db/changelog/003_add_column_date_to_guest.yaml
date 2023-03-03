@@ -1,0 +1,14 @@
+databaseChangeLog:
+  - changeSet:
+      id: 003_add_column_date_to_guest
+      author: harry@gmail.com
+      changes:
+        - addColumn:
+            tableName: guest
+            columns:
+            - column:
+                name: date_create
+                type: DATETIME
+            - column:
+                name: date_update
+                type: DATETIME

@@ -1,0 +1,35 @@
+databaseChangeLog:
+- changeSet:
+    id: 001_init_db_structure
+    author: tthyu83@gmail.com
+    changes:
+    - createTable:
+        tableName: guest
+        columns:
+        - column:
+            constraints:
+              primaryKey: true
+            name: id
+            type: BIGINT
+        - column:
+            name: name
+            type: VARCHAR(255)
+#            validate: true
+        - column:
+            name: age
+            type: BIGINT
+        - column:
+            name: gender
+            type: VARCHAR(200)
+        - column:
+            name: address
+            type: VARCHAR(200)
+    - addAutoIncrement:
+        columnDataType: BIGINT
+        columnName: id
+        defaultOnNull: false
+        generationType: ALWAYS
+        incrementBy: 1
+        schemaName: public
+        startWith: 111
+        tableName: guest

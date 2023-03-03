@@ -1,0 +1,49 @@
+databaseChangeLog:
+- changeSet:
+    id: 1674117883317-1
+    author: User (generated)
+    changes:
+    - createSequence:
+        cacheSize: 1
+        cycle: false
+        dataType: bigint
+        incrementBy: 50
+        maxValue: 9223372036854775807
+        minValue: 1
+        sequenceName: brand_seq
+        startValue: 1
+- changeSet:
+    id: 1674117883317-2
+    author: User (generated)
+    changes:
+    - createSequence:
+        cacheSize: 1
+        cycle: false
+        dataType: bigint
+        incrementBy: 50
+        maxValue: 9223372036854775807
+        minValue: 1
+        sequenceName: model_seq
+        startValue: 1
+- changeSet:
+    id: 1674117883317-3
+    author: User (generated)
+    changes:
+    - createTable:
+        columns:
+        - column:
+            autoIncrement: true
+            constraints:
+              nullable: false
+              primaryKey: true
+              primaryKeyName: guest_pkey
+            name: id
+            type: BIGINT
+        - column:
+            name: age
+            type: INTEGER
+        - column:
+            name: name
+            type: VARCHAR(255)
+        tableName: guest
+

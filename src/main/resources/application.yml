@@ -1,0 +1,52 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/booking
+    username: postgres
+    password: postgres
+  jpa:
+    hibernate:
+      ddl-auto: update
+#    properties:
+#        hibernate:
+#          dialect: org.hibernate.dialect.PostgreSQLDialect
+#    defer-datasource-initialization: true
+  liquibase:
+    change-log: classpath:db/changelog/db.changelog-master.yaml
+  mvc:
+    pathmatch:
+      matching-strategy: ANT_PATH_MATCHER
+#    enabled: false
+#  security:
+#    user:  
+#      name: harry
+#      password: 123
+#
+#application:
+#    rest:
+#        context-path: /api
+#        allowed-origins: ${ALLOWED_ORIGINS:http://localhost:4200, http://localhost:4201}
+#
+#  devtools:
+#    restart:
+#      log-condition-evaluation-delta: false
+springfox:
+  documentation: 
+    enabled: true
+springdoc:
+  api-docs:
+    path: /v1/api-docs
+
+# Set Limit size of file excel 
+  servlet:
+    multipart:
+      max-file-size: 2MB
+      max-request-size: 2MB
+      
+#Config port and context      
+server:
+  servlet:
+    context-path: /api
+  port: 8081
+
+
+      

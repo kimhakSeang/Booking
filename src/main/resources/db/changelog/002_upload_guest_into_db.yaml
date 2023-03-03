@@ -1,0 +1,9 @@
+databaseChangeLog:
+  - changeSet:
+      id: 002_upload_guest_into_db
+      author: kimhak@gmail.com
+      changes:
+        - loadData:
+            file: db/data/guest.csv
+            tableName: guest      
+            

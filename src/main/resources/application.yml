@@ -29,12 +29,12 @@ spring:
 #  devtools:
 #    restart:
 #      log-condition-evaluation-delta: false
-springfox:
-  documentation: 
-    enabled: true
-springdoc:
-  api-docs:
-    path: /v1/api-docs
+#springfox:
+#  documentation: 
+#    enabled: true
+#springdoc:
+#  api-docs:
+#    path: /v1/api-docs
 
 # Set Limit size of file excel 
   servlet:
@@ -43,10 +43,10 @@ springdoc:
       max-request-size: 2MB
       
 #Config port and context      
-server:
-  servlet:
-    context-path: /api
-  port: 8081
+#server:
+#  servlet:
+#    context-path: /api
+#  port: 8080
 
 
       

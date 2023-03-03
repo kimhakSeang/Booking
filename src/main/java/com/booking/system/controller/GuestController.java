@@ -1,7 +1,10 @@
 package com.booking.system.controller;
 
+import java.io.IOException;
 import java.util.List;
 import java.util.Map;
+
+import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -45,5 +48,14 @@ public class GuestController {
 		Map<Integer, Guest> guestExcel = service.uploadGuestExcel(file);
 		return ResponseEntity.ok(guestExcel);
 	}
+	
+    @GetMapping("/export-to-excel")
+    public void exportToExcel(HttpServletResponse response) throws IOException {
+        response.setContentType("application/octet-stream");
+        String headerKey = "Content-Disposition";
+        String headerValue = "attachment; filename=Guest_Information.xlsx";
+        response.setHeader(headerKey, headerValue);
+        service.exportGuestToExcel(response);
+    }
 	
 }

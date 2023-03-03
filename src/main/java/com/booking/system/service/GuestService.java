@@ -1,7 +1,10 @@
 package com.booking.system.service;
 
+import java.io.IOException;
 import java.util.List;
 import java.util.Map;
+
+import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.web.multipart.MultipartFile;
 
@@ -12,4 +15,5 @@ public interface GuestService {
       List<Guest> getAll();
       Guest addGuest(Guest guest);
       Map<Integer, Guest> uploadGuestExcel(MultipartFile file);
+      List<Guest> exportGuestToExcel(HttpServletResponse response)throws IOException ;
 }
